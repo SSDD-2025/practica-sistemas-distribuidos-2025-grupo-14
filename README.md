@@ -1,1 +1,7 @@
-[![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-22041afd0340ce965d47ae6ef1cefeee28c7c493a6346c4f15d667ab976d596c.svg)](https://classroom.github.com/a/D1C1HU9V)
+Este grupo está formado por alumnos del doble grado de Ingeniería Informática e Ingeniería del Software:
+
+ALBERTO MAYORAL GOMEZ
+ICÍAR MORENO LÓPEZ
+JORGE RAMIREZ GAYO
+
+Enlace al repositorio de github: https://github.com/CodeURJC-DAW-2024-25/webapp14.git
