@@ -7,6 +7,10 @@ Enlace al repositorio de github: https://github.com/CodeURJC-DAW-2024-25/webapp1
 ### 🤝 PARTICIPATION
 
 
+### **Alberto Mayoral Gómez**
+
+I have been responsible for adapting the files related to the Product entity when developing the REST API. This included creating the corresponding DTOs, adapting the ProductService, and modifying the involved Controllers. I also created the endpoints for these requests in the RestController files. Additionally, I took care of part of the security for the REST API and ensured the correct use of response codes. Lastly, I generated a Postman file to verify the correct implementation of the endpoints and the corresponding documentation (apidoc)
+
 Additionally, I have collaborated on the security aspect regarding access to certain pages, providing error and authentication pages. Finally, I have also contributed to correcting and improving the website in general
 
 | Nº    | Commits      | Files      |
