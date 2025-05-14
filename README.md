@@ -24,7 +24,7 @@ Run the provided script:
 ## 📦 Building and Publishing the Image
 You can build and publish the application Docker image using either Maven or Dockerfile approaches:
 
-# 🔨 Maven Commands
+### 🔨 Maven Commands
 Build the project (without running tests):
 
 ```sh
@@ -36,7 +36,7 @@ Build the Docker image using Buildpacks:
 mvn spring-boot:build-image -Dspring-boot.build-image.imageName=your_iciar04/webapp14:latest
 ```
 
-# 🐳 Dockerfile (Alternative)
+### 🐳 Dockerfile (Alternative)
 If you prefer to use a Dockerfile, make sure it's present in your project, then run:
 
 ```sh
