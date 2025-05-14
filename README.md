@@ -20,7 +20,7 @@ Run the provided script:
 ./docker/publish_compose.sh
 ```
 
-##🐳 Deployment Instructions with Docker
+## 🐳 Deployment Instructions with Docker
 #Launching the Application (Server 1)
 
 ```sh
