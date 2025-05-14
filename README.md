@@ -7,11 +7,11 @@ ALBERTO MAYORAL GOMEZ  /  ICÍAR MORENO LÓPEZ  / JORGE RAMIREZ GAYO
 Enlace al repositorio de github: https://github.com/CodeURJC-DAW-2024-25/webapp14.git
 
 
-### 🤝 DOCKER
+# 🤝 DOCKER
 
 ## Publishing docker-compose.prod.yml as an OCI Artifact
 
-# 📦 How to publish
+### 📦 How to publish
 Make sure you have oras installed and Docker is properly configured.
 
 Run the provided script:
@@ -19,6 +19,34 @@ Run the provided script:
 ```sh
 ./docker/publish_compose.sh
 ```
+
+##🐳 Deployment Instructions with Docker
+#Launching the Application (Server 1)
+
+```sh
+sudo docker run -d \
+  --name springboot-app \
+  -p 8443:8443 \
+  -e SPRING_DATASOURCE_URL=jdbc:mysql://192.168.110.35:3306/shop \
+  -e SPRING_DATASOURCE_USERNAME=root \
+  -e SPRING_DATASOURCE_PASSWORD=password \
+  iciar04/webapp14:latest
+```
+This command runs the Spring Boot application container on Server 1, exposing it on port 8443.
+It connects to the MySQL database hosted on Server 2 at IP 192.168.110.35.
+
+#Launching the MySQL Database (Server 2)
+
+```sh
+docker run -d \
+  --name mysql-db \
+  -p 3306:3306 \
+  -e MYSQL_ROOT_PASSWORD=password \
+  -e MYSQL_DATABASE=shop \
+  -v mysql_data:/var/lib/mysql \
+  mysql:9.2
+```
+This command runs a MySQL 9.2 container on Server 2, exposing it on port 3306 and persisting data in the mysql_data volume.
 
 
 ### 🤝 PARTICIPATION
