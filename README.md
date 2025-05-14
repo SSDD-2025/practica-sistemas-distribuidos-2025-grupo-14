@@ -6,6 +6,21 @@ ALBERTO MAYORAL GOMEZ  /  ICÍAR MORENO LÓPEZ  / JORGE RAMIREZ GAYO
 
 Enlace al repositorio de github: https://github.com/CodeURJC-DAW-2024-25/webapp14.git
 
+
+### 🤝 DOCKER
+
+## Publishing docker-compose.prod.yml as an OCI Artifact
+
+# 📦 How to publish
+Make sure you have oras installed and Docker is properly configured.
+
+Run the provided script:
+
+```sh
+./docker/publish_compose.sh
+```
+
+
 ### 🤝 PARTICIPATION
 
 ### **Alberto Mayoral Gómez**
