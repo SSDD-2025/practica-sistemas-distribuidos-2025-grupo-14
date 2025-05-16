@@ -45,10 +45,21 @@ docker push your_dockerhub_username/webapp14:latest
 ```
 
 ## 🐳 Deployment Instructions with Docker
-#Launching the Application (Server 1)
+
+This command forcefully removes the Docker container named springboot-app.
+If the container is running, it will be stopped first and then deleted.
 
 ```sh
-sudo docker run -d \
+docker rm -f container-name
+```
+
+#Launching the Application (Server 1)
+
+This command runs the Spring Boot application container on Server 1, exposing it on port 8443.
+It connects to the MySQL database hosted on Server 2 at IP 192.168.110.35.
+
+```sh
+docker run -d \
   --name springboot-app \
   -p 8443:8443 \
   -e SPRING_DATASOURCE_URL=jdbc:mysql://192.168.110.35:3306/shop \
@@ -56,10 +67,10 @@ sudo docker run -d \
   -e SPRING_DATASOURCE_PASSWORD=password \
   iciar04/webapp14:latest
 ```
-This command runs the Spring Boot application container on Server 1, exposing it on port 8443.
-It connects to the MySQL database hosted on Server 2 at IP 192.168.110.35.
 
 #Launching the MySQL Database (Server 2)
+
+This command runs a MySQL 9.2 container on Server 2, exposing it on port 3306 and persisting data in the mysql_data volume.
 
 ```sh
 docker run -d \
@@ -70,8 +81,11 @@ docker run -d \
   -v mysql_data:/var/lib/mysql \
   mysql:9.2
 ```
-This command runs a MySQL 9.2 container on Server 2, exposing it on port 3306 and persisting data in the mysql_data volume.
 
+Now you have access by this links:
+[- https://193.147.60.54:8443/index](https://193.147.60.54:8443/index)
+
+[- https://sidi14-1.sidi.etsii.urjc.es:8443/index](https://sidi14-1.sidi.etsii.urjc.es:8443/index)
 
 ### 🤝 PARTICIPATION
 
