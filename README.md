@@ -57,28 +57,35 @@ Now you have access by this link:
 
 
 ## 📦 Building and Publishing the Image
-You can build and publish the application Docker image using either Maven or Dockerfile approaches:
 
+You can build and publish the application Docker image using either Maven or Dockerfile approaches
 
-### 🐳 Dockerfile
-If you prefer to use a Dockerfile, make sure it's present in your project, then run:
+### 📄 **Dockerfile**
 
-```sh
+If you prefer to use a Dockerfile, make sure it's present in your project
+
+```
+# Create the image
 ./create_image.sh
+
+# Post the image
 ./publish_image.sh
 ```
 
-### 🔨 Maven Commands (Alternative)
-Build the project (without running tests):
+### 🔨 **Maven Commands**
 
-```sh
+Build the project (without running tests)
+
+```
 mvn clean package -DskipTests
 ```
-Build the Docker image using Buildpacks:
 
-```sh
+Build the Docker image using Buildpacks
+
+```
 mvn spring-boot:build-image -Dspring-boot.build-image.imageName=your_iciar04/webapp14:latest
 ```
+
 
 ## 🌐 Deployment Instructions with Docker
 
@@ -122,17 +129,28 @@ Now you have access by this links:
 - [https://sidi14-1.sidi.etsii.urjc.es:8443/index](https://sidi14-1.sidi.etsii.urjc.es:8443/index)
 
 
-## 📦 Publishing docker-compose.prod.yml as an OCI Artifact
+## 📤 Publishing docker-compose.prod.yml as an OCI Artifact
 
-### How to publish
-Make sure you have oras installed and Docker is properly configured.
+Make sure you have oras installed and Docker is properly configured
 
-Run the provided script:
+Run the provided script
 
-```sh
+```
 ./docker/publish_compose.sh
 ```
 
+
+### 👥​ USER CREDENTIALS
+    
+**Admin**:
+- username: laura1@gmail.com
+- password: Laura.53
+  
+**User**:
+- username: pacoG@gmail.com
+- password: 12345
+
+    
 # PHASE 2
 
 ## 🤝 PARTICIPATION
