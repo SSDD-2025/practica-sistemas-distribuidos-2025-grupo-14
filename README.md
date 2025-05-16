@@ -140,7 +140,7 @@ Run the provided script
 ```
 
 
-### 👥​ USER CREDENTIALS
+## 👥​ USER CREDENTIALS
     
 **Admin**:
 - username: laura1@gmail.com
