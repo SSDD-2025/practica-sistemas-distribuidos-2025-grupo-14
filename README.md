@@ -9,17 +9,35 @@ Enlace al repositorio de github: https://github.com/CodeURJC-DAW-2024-25/webapp1
 
 # 🤝 DOCKER
 
-## Publishing docker-compose.prod.yml as an OCI Artifact
+## 🚀 Deployment Instructions
 
-### 📦 How to publish
-Make sure you have oras installed and Docker is properly configured.
+### 🏭 Production
 
-Run the provided script:
+Remove the existing production compose file if needed
 
 ```sh
-./docker/publish_compose.sh
+rm docker-compose.prod.yml  # Remove the existing docker-compose.prod.yml file
 ```
 
+Download the latest production docker-compose file from GitHub
+
+```sh
+wget https://raw.githubusercontent.com/CodeURJC-DAW-2024-25/webapp14/refs/heads/main/docker/docker-compose.prod.yml
+```
+
+Deploy the application in production mode by pulling images and starting containers
+
+```sh
+docker compose -f docker-compose.prod.yml up
+```
+
+### 🛠️ Development
+
+Start the application in development mode, building the image locally
+
+```sh
+docker compose -f docker-compose.local.yml up
+```
 
 ## 📦 Building and Publishing the Image
 You can build and publish the application Docker image using either Maven or Dockerfile approaches:
@@ -53,7 +71,7 @@ If the container is running, it will be stopped first and then deleted.
 docker rm -f container-name
 ```
 
-#Launching the Application (Server 1)
+# Launching the Application (Server 1)
 
 This command runs the Spring Boot application container on Server 1, exposing it on port 8443.
 It connects to the MySQL database hosted on Server 2 at IP 192.168.110.35.
@@ -68,7 +86,7 @@ docker run -d \
   iciar04/webapp14:latest
 ```
 
-#Launching the MySQL Database (Server 2)
+# Launching the MySQL Database (Server 2)
 
 This command runs a MySQL 9.2 container on Server 2, exposing it on port 3306 and persisting data in the mysql_data volume.
 
@@ -83,9 +101,21 @@ docker run -d \
 ```
 
 Now you have access by this links:
+
 [- https://193.147.60.54:8443/index](https://193.147.60.54:8443/index)
 
 [- https://sidi14-1.sidi.etsii.urjc.es:8443/index](https://sidi14-1.sidi.etsii.urjc.es:8443/index)
+
+## 📦 Publishing docker-compose.prod.yml as an OCI Artifact
+
+### How to publish
+Make sure you have oras installed and Docker is properly configured.
+
+Run the provided script:
+
+```sh
+./docker/publish_compose.sh
+```
 
 ### 🤝 PARTICIPATION
 
