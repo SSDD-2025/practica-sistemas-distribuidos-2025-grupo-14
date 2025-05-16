@@ -6,38 +6,55 @@ ALBERTO MAYORAL GOMEZ  /  ICÍAR MORENO LÓPEZ  / JORGE RAMIREZ GAYO
 
 Enlace al repositorio de github: https://github.com/CodeURJC-DAW-2024-25/webapp14.git
 
+# PHASE 3
 
-# 🤝 DOCKER
+## 🐳 DOCKER
 
 ## 🚀 Deployment Instructions
 
-### 🏭 Production
+### 🏭 **Production**
 
 Remove the existing production compose file if needed
 
-```sh
-rm docker-compose.prod.yml  # Remove the existing docker-compose.prod.yml file
+```
+rm docker-compose.prod.yml
 ```
 
 Download the latest production docker-compose file from GitHub
 
-```sh
+```
 wget https://raw.githubusercontent.com/CodeURJC-DAW-2024-25/webapp14/refs/heads/main/docker/docker-compose.prod.yml
 ```
 
 Deploy the application in production mode by pulling images and starting containers
 
-```sh
+```
 docker compose -f docker-compose.prod.yml up
 ```
 
-### 🛠️ Development
+Now you have access by this links:
+
+- [https://193.147.60.54:8443/index](https://193.147.60.54:8443/index)
+- [https://sidi14-1.sidi.etsii.urjc.es:8443/index](https://sidi14-1.sidi.etsii.urjc.es:8443/index)
+
+### 🛠️ **Development**
+
+Delete docker volumes if needed
+
+```
+docker-compose down -v
+```
 
 Start the application in development mode, building the image locally
 
-```sh
+```
 docker compose -f docker-compose.local.yml up
 ```
+
+Now you have access by this link:
+
+- [https://localhost:8443/index](https://localhost:8443/index)
+
 
 ## 📦 Building and Publishing the Image
 You can build and publish the application Docker image using either Maven or Dockerfile approaches:
@@ -63,21 +80,19 @@ Build the Docker image using Buildpacks:
 mvn spring-boot:build-image -Dspring-boot.build-image.imageName=your_iciar04/webapp14:latest
 ```
 
-## 🐳 Deployment Instructions with Docker
+## 🌐 Deployment Instructions with Docker
 
-This command forcefully removes the Docker container named springboot-app.
-If the container is running, it will be stopped first and then deleted.
+This command removes the Docker container. If the container is running, it will be stopped first and then deleted
 
-```sh
-docker rm -f container-name
+```
+docker rm -f <container-name>
 ```
 
-# Launching the Application (Server 1)
+### **Launching the Application (Server 1)**
 
-This command runs the Spring Boot application container on Server 1, exposing it on port 8443.
-It connects to the MySQL database hosted on Server 2 at IP 192.168.110.35.
+This command runs the Spring Boot application container on Server 1, exposing it on port 8443. It connects to the MySQL database hosted on Server 2 at IP 192.168.110.35
 
-```sh
+```
 docker run -d \
   --name springboot-app \
   -p 8443:8443 \
@@ -87,11 +102,11 @@ docker run -d \
   iciar04/webapp14:latest
 ```
 
-# Launching the MySQL Database (Server 2)
+### **Launching the MySQL Database (Server 2)**
 
-This command runs a MySQL 9.2 container on Server 2, exposing it on port 3306 and persisting data in the mysql_data volume.
+This command runs a MySQL 9.2 container on Server 2, exposing it on port 3306 and persisting data in the mysql_data volume
 
-```sh
+```
 docker run -d \
   --name mysql-db \
   -p 3306:3306 \
@@ -103,9 +118,9 @@ docker run -d \
 
 Now you have access by this links:
 
-[- https://193.147.60.54:8443/index](https://193.147.60.54:8443/index)
+- [https://193.147.60.54:8443/index](https://193.147.60.54:8443/index)
+- [https://sidi14-1.sidi.etsii.urjc.es:8443/index](https://sidi14-1.sidi.etsii.urjc.es:8443/index)
 
-[- https://sidi14-1.sidi.etsii.urjc.es:8443/index](https://sidi14-1.sidi.etsii.urjc.es:8443/index)
 
 ## 📦 Publishing docker-compose.prod.yml as an OCI Artifact
 
@@ -118,7 +133,9 @@ Run the provided script:
 ./docker/publish_compose.sh
 ```
 
-### 🤝 PARTICIPATION
+# PHASE 2
+
+## 🤝 PARTICIPATION
 
 ### **Alberto Mayoral Gómez**
 
@@ -144,7 +161,7 @@ I have been responsible for the user logic in the backend of the application. Th
 |2|[Added UserController and UserService](https://github.com/CodeURJC-DAW-2024-25/webapp14/commit/f072286cf775ffecad41c6afd2a5b8af78b8fabe)|[UserRestController.java](https://github.com/CodeURJC-DAW-2024-25/webapp14/blob/main/backend/src/main/java/es/codeurjc/webapp14/controller/rest/UserRestController.java)
 |3|[Added user DTOs and implemented mapper](https://github.com/CodeURJC-DAW-2024-25/webapp14/commit/034cd6af63a7e4ab48f4a3e5fc916befebd6308e)|[UserController.java](https://github.com/CodeURJC-DAW-2024-25/webapp14/blob/main/backend/src/main/java/es/codeurjc/webapp14/controller/web/UserController.java)
 |4|[Spring security (part 3) and general fixes](https://github.com/CodeURJC-DAW-2024-25/webapp14/commit/e34150d927fa909010e8e7e56e95a85a9ed18185)|[UserOrdersRestController.java](https://github.com/CodeURJC-DAW-2024-25/webapp14/blob/main/backend/src/main/java/es/codeurjc/webapp14/controller/rest/UserOrdersRestController.java)
-|5|[Spring security part 4 (fixed problem with admin views)](https://github.com/CodeURJC-DAW-2024-25/webapp14/commit/0842fface070c28dc311cd83ccf8e549dd749f53)|[AdminOrdersRestController](https://github.com/CodeURJC-DAW-2024-25/webapp14/commit/b77f8d363120496d1f991a2b7f36eb6d01ba62af#diff-cba66e455b92c6fdec05056aeedf36f68a0c30189fb5ea605319b4e74ed4366c)
+|5|[Spring security part 4 (fixed problem with admin views)](https://github.com/CodeURJC-DAW-2024-25/webapp14/commit/0842fface070c28dc311cd83ccf8e549dd749f53)|[AdminOrdersRestController.java](https://github.com/CodeURJC-DAW-2024-25/webapp14/commit/b77f8d363120496d1f991a2b7f36eb6d01ba62af#diff-cba66e455b92c6fdec05056aeedf36f68a0c30189fb5ea605319b4e74ed4366c)
 
 ### **Jorge Ramírez Gayo**
 I have worked on adapting some services and repositories for the REST API and creating their corresponding DTOs and mappers. I have also implemented the endpoints for graphs, index, searches, and images. Finally, I've helped in some security aspects like implementing the login for the REST API and improved the project.
