@@ -42,7 +42,16 @@ docker compose -f docker-compose.local.yml up
 ## 📦 Building and Publishing the Image
 You can build and publish the application Docker image using either Maven or Dockerfile approaches:
 
-### 🔨 Maven Commands
+
+### 🐳 Dockerfile
+If you prefer to use a Dockerfile, make sure it's present in your project, then run:
+
+```sh
+./create_image.sh
+./publish_image.sh
+```
+
+### 🔨 Maven Commands (Alternative)
 Build the project (without running tests):
 
 ```sh
@@ -52,14 +61,6 @@ Build the Docker image using Buildpacks:
 
 ```sh
 mvn spring-boot:build-image -Dspring-boot.build-image.imageName=your_iciar04/webapp14:latest
-```
-
-### 🐳 Dockerfile (Alternative)
-If you prefer to use a Dockerfile, make sure it's present in your project, then run:
-
-```sh
-docker build -t your_dockerhub_username/webapp14:latest .
-docker push your_dockerhub_username/webapp14:latest
 ```
 
 ## 🐳 Deployment Instructions with Docker
