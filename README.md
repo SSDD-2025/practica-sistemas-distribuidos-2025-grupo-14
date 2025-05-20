@@ -83,7 +83,7 @@ mvn clean package -DskipTests
 Build the Docker image using Buildpacks
 
 ```
-mvn spring-boot:build-image -Dspring-boot.build-image.imageName=your_iciar04/webapp14:latest
+mvn spring-boot:build-image -Dspring-boot.build-image.imageName=iciar04/webapp14:latest
 ```
 
 
