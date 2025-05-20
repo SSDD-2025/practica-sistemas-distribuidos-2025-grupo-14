@@ -131,7 +131,7 @@ Now you have access by this links:
 
 ## 📤 Publishing docker-compose.prod.yml as an OCI Artifact
 
-Make sure you have oras installed and Docker is properly configured
+Make sure you have oras installed.
 
 Run the provided script
 
@@ -139,6 +139,28 @@ Run the provided script
 ./docker/publish_compose.sh
 ```
 
+Install oras on the remote machine
+
+```
+curl -s https://api.github.com/repos/oras-project/oras/releases/latest \
+| grep "browser_download_url.*oras_.*_linux_amd64\.tar\.gz" \
+| cut -d '"' -f 4 \
+| wget -qi - -O oras.tar.gz && \
+tar -xzf oras.tar.gz oras && \
+sudo mv oras /usr/local/bin/
+```
+
+Download the artifact
+
+```
+oras pull docker.io/iciar04/spring-webapp-compose:0.1.0
+```
+
+Execute the new docker compose (check the filename)
+
+```
+docker compose -f docker-compose.prod.yml up -d
+```
 
 ## 👥​ USER CREDENTIALS
     
